@@ -1,13 +1,16 @@
 class Track {
-    constructor(center, radius) {
+    constructor(center, radius, hue) {
         this.center = center;
         this.radius = radius;
+        this.hue = hue;
+        this.period = Math.PI;
     }
 
     getPosition(offset) {
         return {
             x: this.center.x + Math.cos(offset) * this.radius,
             y: this.center.y - Math.sin(offset) * this.radius,
+            round: Math.floor(offset / this.period),
         };
     }
 
@@ -21,7 +24,7 @@ class Track {
             );
         }
         ctx.closePath();
-        ctx.strokeStyle = "white";
+        ctx.strokeStyle = `hsl(${this.hue}, 100%, 50%)`;
         ctx.stroke();
     }
 }
