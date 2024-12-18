@@ -9,8 +9,10 @@
 
 <body>
     <canvas id="myCanvas" style="background-color: black;"></canvas>
+    <script src="./sound.js"></script>
     <script src="./track.js"></script>
     <script src="./ball.js"></script>
+
     <script>
         const size = 700;
         myCanvas.width = size;
@@ -20,7 +22,7 @@
         const trackRadius = 100;
 
         const ballRadius = 10;
-        const ballSpeed = 0.01;
+        const ballSpeed = 0.05;
 
         const ctx = myCanvas.getContext("2d");
         const track = new Track(trackCenter, trackRadius);

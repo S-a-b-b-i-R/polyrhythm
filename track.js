@@ -6,7 +6,7 @@ class Track {
 
     getPosition(offset) {
         return {
-            x: this.center.x + Math.cos(offset * 3) * this.radius,
+            x: this.center.x + Math.cos(offset) * this.radius,
             y: this.center.y - Math.sin(offset) * this.radius,
         };
     }
@@ -16,7 +16,7 @@ class Track {
         // ctx.arc(this.center.x, this.center.y, this.radius, 0, Math.PI * 2);
         for (let a = 0; a < Math.PI * 2; a += 0.01) {
             ctx.lineTo(
-                this.center.x + Math.cos(a * 3) * this.radius,
+                this.center.x + Math.cos(a) * this.radius,
                 this.center.y - Math.sin(a) * this.radius
             );
         }
